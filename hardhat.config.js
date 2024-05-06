@@ -1,12 +1,6 @@
-require("@nomiclabs/hardhat-waffle");
-require('dotenv').config();
+require("@nomicfoundation/hardhat-toolbox");
 
+/** @type import('hardhat/config').HardhatUserConfig */
 module.exports = {
   solidity: "0.8.17",
-  networks: {
-    sepolia: {
-      url: `https://eth-sepolia.g.alchemy.com/v2/${process.env.REACT_APP_ALCHEMY_SEPOLIA}`,
-      accounts: [`0x${process.env.REACT_APP_PRIVATE_KEY}`],
-    },
-  },
 };

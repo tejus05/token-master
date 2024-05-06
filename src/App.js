@@ -28,12 +28,12 @@ function App() {
     setProvider(provider)
 
     const network = await provider.getNetwork()
-    // console.log(network);
+    console.log(network);
     const tokenMaster = new ethers.Contract(config[network.chainId].TokenMaster.address, TokenMaster, provider)
     setTokenMaster(tokenMaster)
 
     const totalOccasions = await tokenMaster.totalOccasions()
-    // console.log(totalOccasions);
+    console.log(totalOccasions);
     // const occasions = []
 
     for (var i = 1; i <= totalOccasions; i++) {
@@ -53,8 +53,6 @@ function App() {
   useEffect(() => {
     loadBlockchainData()
   }, [])
-
-  // console.log(`toggle ${toggle} from app.js `);
 
   return (
     <div>
